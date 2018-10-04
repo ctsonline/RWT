@@ -10,6 +10,6 @@ datagroup: rwt_default_datagroup {
 
 persist_with: rwt_default_datagroup
 
-explore: filter {
+explore: rwt_filter {
   label: "Filter RWT"
 }
