@@ -92,7 +92,8 @@ view: filter {
   dimension_group: t1 {
     type: time
     timeframes: [raw, hour_of_day, day_of_week, time_of_day, date]
-    sql: ${TABLE}t1 ;;
+    sql: ${TABLE}.timestamp
+    ;;
   }
 
   dimension_group: timestamp {
