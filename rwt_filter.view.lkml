@@ -26,7 +26,14 @@ view: rwt_filter {
     sql: ${TABLE}.a4 ;;
   }
 
+
   dimension: d1 {
+    group_label: "Digital"
+    type: number
+    sql: ${TABLE}.d1 ;;
+  }
+
+  dimension: d1_name {
     group_label: "Digital"
     type: number
     sql: ${TABLE}.d1 ;;
@@ -79,8 +86,9 @@ view: rwt_filter {
   dimension: site_name {
     type: string
     hidden: no
-    sql: REPLACE(${sid},'3','Coogee Amen') ;;
+    sql: REPLACE(${sid},'3','Right FM','2','Left FM') ;;
   }
+
 
   dimension: date {
     label: "date"
