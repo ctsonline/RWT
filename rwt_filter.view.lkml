@@ -83,12 +83,6 @@ view: rwt_filter {
     sql: ${TABLE}.cid ;;
   }
 
-  dimension: site_name {
-    type: string
-    hidden: no
-    sql: REPLACE(${sid},'3','Left FM') ;;
-  }
-
 
   dimension: date {
     label: "date"
@@ -179,4 +173,9 @@ view: rwt_filter {
     sql: ${a4} ;;
   }
 
+  measure: time_stamp{
+      type:time
+      timeframes: [raw, time, time_of_day, hour, date, week, month]
+      sql: TIMESTAMPTZ(${TABLE}.timestamp);;
+     }
 }
