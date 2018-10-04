@@ -86,7 +86,7 @@ view: rwt_filter {
   dimension: site_name {
     type: string
     hidden: no
-    sql: REPLACE(${sid},'3','Right FM','2','Left FM') ;;
+    sql: REPLACE(${sid},'3','Left FM') ;;
   }
 
 
@@ -119,6 +119,11 @@ view: rwt_filter {
 
 
 #   2017.11.14 AD at 13:31:28 AEDT
+
+  measure: d1_count {
+    type: min
+    sql: ${d1} ;;
+  }
 
   measure: d1_max {
     type: max
