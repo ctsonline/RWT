@@ -76,12 +76,20 @@ view: rwt_filter {
     sql: ${TABLE}.sid;;
   }
 
+  dimension: device1{
+    type: string
+    hidden: no
+    sql: REPLACE(${sid},'3','Filter FM Right')
+  }
+
+
   dimension: cid {
     label: "Customer ID"
     type: number
     value_format_name: id
     sql: ${TABLE}.cid ;;
   }
+
 
 
   dimension: date {
@@ -91,32 +99,10 @@ view: rwt_filter {
     sql: ${TABLE}.t1 ;;
   }
 
-  dimension_group: t1 {
-    type: time
-    timeframes: [raw, hour_of_day, day_of_week, time_of_day, date]
-    sql: ${TABLE}.timestamp
-    ;;
-  }
-
-  dimension_group: timestamp {
-    label: "Time real"
-    type: time
-    convert_tz: yes
-    timeframes: [raw, time, time_of_day, hour, date, week, month]
-    sql: ${TABLE}.timestamp::timestamp;;
-  }
-
-  dimension_group: timestamp1 {
+    dimension_group: timestamp {
     type:time
-    timeframes: [raw, time, time_of_day, hour, date, week, month]
+    timeframes: [raw, time, time_of_day,minute, hour, date, week, month,]
     sql: TIMESTAMPTZ(${TABLE}.timestamp);;
-  }
-
-  dimension_group: reading_8am {
-    description: "A date starts from 8am of that day and ends before 8am of the following day."
-    type: time
-    timeframes: [date, hour, week, month, year]
-    sql: DATEADD(hour,-8,${t1_raw}) ;;
   }
 
   ##dimension_group: timestamp {
