@@ -76,13 +76,6 @@ view: rwt_filter {
     sql: ${TABLE}.sid;;
   }
 
-  dimension: device1{
-    type: string
-    hidden: no
-    sql: REPLACE(${sid},'3','Filter FM Right')
-  }
-
-
   dimension: cid {
     label: "Customer ID"
     type: number
