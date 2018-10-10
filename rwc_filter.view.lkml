@@ -1,4 +1,4 @@
-view: rwt_filter {
+view: rwc_filter {
   sql_table_name: public.ctsfieldmousedata ;;
 
 
