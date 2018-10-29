@@ -109,7 +109,7 @@ view: rwt_filter {
 #   2017.11.14 AD at 13:31:28 AEDT
 
   measure: d1_count {
-    type: min
+    type: sum
     sql: ${d1} ;;
   }
 
