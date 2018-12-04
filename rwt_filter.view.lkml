@@ -128,21 +128,25 @@ view: rwt_filter {
   }
 
   measure: max_value_r1 {
+    group_label: "Power On Off"
     type: max
     sql: ${r1} ;;
   }
 
   measure: max_value_r2 {
+    label: "Air Cooler On Off"
     type: max
     sql: ${r2} ;;
   }
 
   measure: max_value_r4 {
-    type: max
+    label: "Alarm"
+        type: max
     sql: ${r4} ;;
   }
 
   measure: max_value_r3 {
+    label: "Solenoid"
     type: max
     sql: ${r3} ;;
   }
