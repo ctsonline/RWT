@@ -127,6 +127,26 @@ view: rwt_filter {
     drill_fields: []
   }
 
+  measure: max_value_r1 {
+    type: max
+    sql: ${r1} ;;
+  }
+
+  measure: max_value_r2 {
+    type: max
+    sql: ${r2} ;;
+  }
+
+  measure: max_value_r4 {
+    type: max
+    sql: ${r4} ;;
+  }
+
+  measure: max_value_r3 {
+    type: max
+    sql: ${r3} ;;
+  }
+
   measure: average_value_a1 {
     type: average
     sql: ${a1} ;;
