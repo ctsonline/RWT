@@ -128,7 +128,7 @@ view: rwt_filter {
   }
 
   measure: max_value_r1 {
-    group_label: "Power On Off"
+    label: "Power On Off"
     type: max
     sql: ${r1} ;;
   }
