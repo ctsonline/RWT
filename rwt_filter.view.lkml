@@ -119,6 +119,7 @@ view: rwt_filter {
   }
 
   measure: d2_max {
+    label: "Flow Switch On Off"
     type: max
     sql: ${d2} ;;
   }
