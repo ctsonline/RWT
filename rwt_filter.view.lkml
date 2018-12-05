@@ -113,6 +113,10 @@ view: rwt_filter {
     sql: ${d1} ;;
   }
 
+  measure:  d1_avg{
+    type: average
+    sql: ${d1} ;;
+  }
   measure: d1_max {
     type: max
     sql: ${d1} ;;
