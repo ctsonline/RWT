@@ -92,11 +92,19 @@ view: rwt_filter {
     sql: ${TABLE}.t1 ;;
   }
 
-    dimension_group: timestamp {
-    type:time
-    timeframes: [raw, time, time_of_day,minute, hour, date, week, month,]
+    #dimension_group: timestamp {
+   # type:time
+    #timeframes: [raw, time, time_of_day,minute, hour, date, week, month,]
+   # sql: TIMESTAMPTZ(${TABLE}.timestamp);;
+  #}
+
+  dimension_group: timestamp {
+    type: time
+    timeframes: [raw, time, time_of_day, date, week, month, hour_of_day, hour, hour3, minute, minute10]
     sql: TIMESTAMPTZ(${TABLE}.timestamp);;
+    drill_fields: [timestamp_date,timestamp_hour,timestamp_week]
   }
+
 
   ##dimension_group: timestamp {
   ## type: time
